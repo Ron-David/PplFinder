@@ -64,6 +64,9 @@ const UserList = ({ users, isLoading, favorites }) => {
   }
 
   const isFavorite = user => {
+    if (!favStorage) {
+      return false
+    }
     return favStorage.some(u => u.login.uuid === user.login.uuid)
   }
 
