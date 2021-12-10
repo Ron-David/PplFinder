@@ -8,9 +8,14 @@ const NavBar = () => {
   const [value, setValue] = useState(0);
   const history = useHistory()
 
+  const homePath = '/'
+  const favoritesPath = '/favorites'
+
+  if (value === 0 && history.location.pathname !== homePath) {
+    history.push('/')
+  }
   const handleChange = (_e, newValue) => {
-    const link = newValue === 1 ? '/favorites' : '/'
-    history.replace(link)
+    history.replace(newValue === 1 ? favoritesPath : homePath)
     setValue(newValue);
   };
   return (

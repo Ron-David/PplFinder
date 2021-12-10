@@ -7,7 +7,6 @@ import { useLocalStorage } from "hooks";
 
 const AppRouter = () => {
   const favorites = useLocalStorage('favorites')
-
   return (
     <ThemeProvider>
       <Router>
