@@ -12,7 +12,7 @@ const NavBar = () => {
   const favoritesPath = '/favorites'
 
   if (value === 0 && history.location.pathname !== homePath) {
-    history.push('/')
+    history.push(homePath)
   }
   const handleChange = (_e, newValue) => {
     history.replace(newValue === 1 ? favoritesPath : homePath)
